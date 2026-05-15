@@ -261,3 +261,30 @@ Nama: Chewyszel
 # License
 
 Project ini dibuat untuk kebutuhan pembelajaran dan tugas perkuliahan.
+# Screenshot Sistem
+
+## Login Page
+
+![Login](screenshots/login.png)
+
+---
+
+## Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## CRUD Lapangan
+
+![CRUD](screenshots/crud-field.png)
+
+---
+
+## API Testing
+
+![API](screenshots/apitesting-post.png)
+
+---
+
+![API](screenshots/apitesting-get.png)
