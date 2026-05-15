@@ -1,59 +1,263 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Booking Online Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Deskripsi
+Booking Online Laravel adalah aplikasi berbasis web yang digunakan untuk melakukan pemesanan lapangan secara online. Sistem ini dibuat menggunakan framework Laravel 12 dan dilengkapi dengan fitur autentikasi, CRUD data lapangan, REST API, serta keamanan API menggunakan Laravel Sanctum.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Fitur Utama
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Login & Register User
+- Authentication Laravel Breeze
+- Authorization Role Admin & User
+- CRUD Data Lapangan
+- Booking Lapangan Online
+- RESTful API
+- JSON Response API
+- Validasi Request
+- API Security Laravel Sanctum
+- Middleware Proteksi
+- Unit Test
+- Feature Test
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+# Teknologi yang Digunakan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- Laravel 12
+- PHP 8.2
+- MySQL
+- Laravel Sanctum
+- Laravel Breeze
+- Bootstrap / Tailwind CSS
+- Thunder Client / Postman
+- Git & GitHub
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+# Struktur Database
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Tabel Users
+- id
+- name
+- email
+- password
+- role
 
-### Premium Partners
+## Tabel Fields
+- id
+- nama_lapangan
+- harga
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Tabel Bookings
+- id
+- user_id
+- field_id
+- tanggal
+- jam
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Relasi Database
 
-## Code of Conduct
+- User memiliki banyak booking
+- Lapangan memiliki banyak booking
+- Booking dimiliki oleh satu user
+- Booking terkait dengan satu lapangan
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+# Cara Install Project
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 1. Clone Repository
 
-## License
+```bash
+git clone https://github.com/chewyszel/booking-online.git
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 2. Masuk Folder Project
+
+```bash
+cd booking-online
+```
+
+---
+
+## 3. Install Dependency Laravel
+
+```bash
+composer install
+```
+
+---
+
+## 4. Install Node Modules
+
+```bash
+npm install
+```
+
+---
+
+## 5. Copy File Environment
+
+```bash
+cp .env.example .env
+```
+
+---
+
+## 6. Generate Key Laravel
+
+```bash
+php artisan key:generate
+```
+
+---
+
+## 7. Atur Database di .env
+
+```env
+DB_DATABASE=booking_online
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+## 8. Jalankan Migration
+
+```bash
+php artisan migrate
+```
+
+---
+
+## 9. Jalankan Server Laravel
+
+```bash
+php artisan serve
+```
+
+---
+
+# Authentication & Authorization
+
+Sistem menggunakan:
+- Laravel Breeze untuk authentication
+- Middleware auth untuk proteksi halaman
+- Laravel Sanctum untuk keamanan API
+- Role Admin & User untuk authorization
+
+---
+
+# RESTful API
+
+## Login API
+
+### Endpoint
+
+```http
+POST /api/login
+```
+
+### Request
+
+```json
+{
+  "email": "admin@gmail.com",
+  "password": "password"
+}
+```
+
+### Response
+
+```json
+{
+  "message": "Login berhasil",
+  "token": "1|xxxxx"
+}
+```
+
+---
+
+# API Endpoint
+
+| Method | Endpoint | Fungsi |
+|---|---|---|
+| POST | /api/login | Login API |
+| GET | /api/fields | Menampilkan data lapangan |
+| GET | /api/fields/{id} | Detail lapangan |
+| POST | /api/bookings | Tambah booking |
+| GET | /api/bookings | List booking |
+
+---
+
+# API Security
+
+Project ini menggunakan Laravel Sanctum sebagai keamanan API berbasis token.
+
+Endpoint API dilindungi menggunakan middleware:
+
+```php
+Route::middleware('auth:sanctum')->group(function () {
+
+});
+```
+
+---
+
+# Testing
+
+## Unit Test
+
+```bash
+php artisan make:test FieldTest --unit
+```
+
+## Feature Test
+
+```bash
+php artisan make:test LoginTest
+```
+
+## Menjalankan Test
+
+```bash
+php artisan test
+```
+
+---
+
+# Dokumentasi
+
+Dokumentasi project meliputi:
+- ERD
+- Flow Sistem
+- Dokumentasi API
+- Screenshot Sistem
+- Testing
+
+---
+
+# Deployment
+
+Project di-deploy menggunakan:
+- GitHub Repository
+
+Repository:
+https://github.com/chewyszel/booking-online
+
+---
+
+# Author
+
+Nama: Chewyszel
+
+---
+
+# License
+
+Project ini dibuat untuk kebutuhan pembelajaran dan tugas perkuliahan.
