@@ -277,7 +277,7 @@ Project ini dibuat untuk kebutuhan pembelajaran dan tugas perkuliahan.
 
 ## CRUD Lapangan
 
-![CRUD](screenshots/crud-field.png)
+![CRUD](screenshots/crud-lapangan.png)
 
 ---
 
